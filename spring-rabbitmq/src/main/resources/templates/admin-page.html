@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Book store</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>function sendForm(){
+    let form = document.getElementsByTagName('form');
+    form.submit();
+}
+    </script>
+    <style>
+        a.dis {
+    pointer-events: none; /* делаем ссылку некликабельной */
+    cursor: default;  /* устанавливаем курсор в виде стрелки */
+    color: #999; /* цвет текста для нективной ссылки */
+    }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div th:replace="~{fragments :: navigation(Admin)}"/>
+    <h3>Сервисы:</h3>
+    <br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>Сервис</td>
+            <td>Количество вызовов</td>
+        </tr>
+        </thead>
+        <tbody>
+        <div th:each="s : ${services}">
+            <tr th:each="mapEntry : ${s}">
+                <td th:text="${mapEntry.key}"></td>
+                <td th:text="${mapEntry.value}"></td>
+            </tr>
+        </div>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+/.idea/
+/rabbitmq-console/target/
+/rabbitmq-console/rabbitmq-console.iml
+/spring-rabbitmq/spring-rabbitmq.iml
+/spring-rabbitmq/target/
+/book-store-aop.iml
+/target/
